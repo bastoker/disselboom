@@ -12,6 +12,14 @@ public abstract class Result<T> implements Functor<T> {
     @Override
     public abstract <U> Result<U> map(Function<? super T, ? extends U> mapper);
 
+    public <U> Result<U> mapFailure() {
+        if (isFailure()) {
+            return map(null);
+        } else {
+            throw new IllegalStateException("Only applicable to failures");
+        }
+    }
+
     boolean isSuccess()  {
         return this instanceof Result.Success<T>;
     }

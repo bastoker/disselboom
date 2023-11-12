@@ -14,7 +14,7 @@ public class CharParser implements Parser<Character> {
         if (!input.isEmpty() && c == input.charAt(0)) {
             return Result.of(new Parsed<>(input.charAt(0), restOf(input)));
         } else {
-            return Result.failure("Char '%s' not found at the start of String(\"%s\") ".formatted(c, input));
+            return Result.failure("Character '%s' not found at the start of String(\"%s\") ".formatted(c, input));
         }
     }
 }

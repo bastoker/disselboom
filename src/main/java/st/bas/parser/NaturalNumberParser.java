@@ -15,13 +15,6 @@ public class NaturalNumberParser implements Parser<Integer> {
        return some(digits).parse(input).map(p -> p.map(cs -> parseInt(stringOf(cs))));
     }
 
-    @Override
-    public <B> Parser<B> flatMap(Function<? super Integer, ? extends Parser<? extends Integer>> mapper) {
-        Objects.requireNonNull(mapper, "mapper is null");
-
-        return null;
-    }
-
     // Example from VAVR:
 //    public <U> Array<U> flatMap(Function<? super T, ? extends Iterable<? extends U>> mapper) {
 //        Objects.requireNonNull(mapper, "mapper is null");

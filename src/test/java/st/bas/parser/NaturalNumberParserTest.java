@@ -26,5 +26,7 @@ public class NaturalNumberParserTest {
     void naturalNumberParsingOfLettersFails() {
         Result<Parsed<Integer>> result = parser.parse("a");
         assertThat(result.isFailure()).isTrue();
+        assertThat(result.getFailureMessage()).isNotEmpty();
+        System.out.println(result.getFailureMessage());
     }
 }
